@@ -14,11 +14,7 @@ const tourSchema = new mongoose.Schema(
     address: {
       type: String,
       required: true,
-    },    
-    distance: {
-      type: Number,
-      required: true,
-    }, 
+    },
     photo: {
       type: String,
       required: true,
@@ -27,26 +23,34 @@ const tourSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    price: {
+    bookingPrice: {
       type: Number,
       required: true,
     },
-    maxGroupSize: {
-      type: Number,
-      required: true,
-    },
-
-    reviews: [
+    jobDetails: [
       {
-        type: mongoose.Types.ObjectId,
-        ref: "Review",
+        vacancy: String,
+        position: String,
+        salary: String,
+        jobDescription: String
       },
     ],
-
+    note: {
+      type: String,
+      required: true,
+    },
+    bookingPolicy: {
+      type: String,
+      required: true,
+    },
+    cancellationPolicy: {
+      type: String,
+      required: true,
+    },
     featured: {
       type: Boolean,
       default: false,
-    }, 
+    },
   },
   { timestamps: true }
 );
